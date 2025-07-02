@@ -18,11 +18,11 @@ TABS = ["🔵 Biomassa", "☀️ PV", "🌬️ WT", "🔋 Baterias", "⚡ Cargas
 
 # --- Carrega JSON em cache ---
 @st.cache_data
-def load_data(path=r"C:\Users\shenr\Downloads\SIMULATE_CLP-main (1)\SIMULATE_CLP-main\dispatch_data.json"):
+def load_data(path="dispatch_data.json"):
     with open(path, "r") as f:
         return json.load(f)
-data = load_data()
 
+data = load_data()
 # --- Helpers ---
 def build_time_df(raw, prefix, n):
     df = pd.DataFrame(raw).T if raw else pd.DataFrame()
